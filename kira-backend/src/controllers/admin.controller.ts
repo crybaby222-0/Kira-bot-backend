@@ -4,7 +4,7 @@ import { prisma } from "../lib/prisma.js";
 import { HttpError } from "../middlewares/error.js";
 
 export async function listUsers(req: Request, res: Response) {
-  const q = (req.query.q as string | undefined)?.toLowerCase() ?? "";
+  const q = (req.query as any.q as string | undefined)?.toLowerCase() ?? "";
   const users = await prisma.user.findMany({
     where: q
       ? {
