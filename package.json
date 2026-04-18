@@ -2,7 +2,7 @@
   "name": "kira-root",
   "private": true,
   "scripts": {
-    "build": "cd kira-backend && npm install && npx prisma generate && npx prisma db push && npm run build",
-    "start": "cd kira-backend && npm run start"
+    "build": "npm install --prefix kira-backend && npx prisma generate --schema=kira-backend/prisma/schema.prisma && npx prisma db push --schema=kira-backend/prisma/schema.prisma && npm run build --prefix kira-backend",
+    "start": "npm run start --prefix kira-backend"
   }
 }
