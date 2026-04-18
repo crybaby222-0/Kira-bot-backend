@@ -1,0 +1,8 @@
+{
+  "name": "kira-root",
+  "private": true,
+  "scripts": {
+    "build": "cd kira-backend && npm install && npx prisma generate && npx prisma db push && npm run build",
+    "start": "cd kira-backend && npm run start"
+  }
+}
